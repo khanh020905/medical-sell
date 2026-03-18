@@ -55,7 +55,7 @@ const doctorVariants = {
   center: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: {
     opacity: 0,
@@ -69,7 +69,7 @@ const titleVariants = {
   center: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: { opacity: 0, scale: 1.02, transition: { duration: 0.5 } },
 }
@@ -79,7 +79,7 @@ const floatLeft = {
   center: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: { opacity: 0, x: -20, transition: { duration: 0.35 } },
 }
@@ -89,7 +89,7 @@ const floatRight = {
   center: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.7, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: { opacity: 0, x: 20, transition: { duration: 0.35 } },
 }
@@ -115,7 +115,7 @@ const ctaVariants = {
 }
 
 export default function HeroCarousel() {
-  const [[current, direction], setCurrent] = useState([0, 0])
+  const [[current, _direction], setCurrent] = useState([0, 0])
   const [isPaused, setIsPaused] = useState(false)
 
   const paginate = useCallback(

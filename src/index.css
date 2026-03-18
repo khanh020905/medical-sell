@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme ===== */
+@theme {
+  --color-primary-50: #f0f9f6;
+  --color-primary-100: #d5f0e8;
+  --color-primary-200: #aae0d1;
+  --color-primary-300: #72c9b4;
+  --color-primary-400: #43ad96;
+  --color-primary-500: #2a917c;
+  --color-primary-600: #1f7564;
+  --color-primary-700: #1b5f52;
+  --color-primary-800: #194c43;
+  --color-primary-900: #173f38;
+  --color-primary-950: #0a2522;
+
+  --color-accent-50: #fef6ee;
+  --color-accent-100: #fce9d7;
+  --color-accent-200: #f8cfae;
+  --color-accent-300: #f3ae7a;
+  --color-accent-400: #ee8b4d;
+  --color-accent-500: #e8692a;
+  --color-accent-600: #d94f1f;
+  --color-accent-700: #b43b1c;
+  --color-accent-800: #90311e;
+  --color-accent-900: #742a1c;
+  --color-accent-950: #3f130c;
+
+  --color-neutral-50: #f8f9fa;
+  --color-neutral-100: #f1f3f5;
+  --color-neutral-200: #e9ecef;
+  --color-neutral-300: #dee2e6;
+  --color-neutral-400: #ced4da;
+  --color-neutral-500: #adb5bd;
+  --color-neutral-600: #868e96;
+  --color-neutral-700: #495057;
+  --color-neutral-800: #343a40;
+  --color-neutral-900: #212529;
+  --color-neutral-950: #0d1117;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-neutral-800);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero carousel progress dot animation */
+@keyframes progress {
+  from {
+    stroke-dashoffset: 50.27;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Brand marquee scroll animations */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+

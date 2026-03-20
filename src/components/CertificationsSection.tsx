@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 import { ShieldCheck } from "lucide-react";
 
 /* ─── Certification Data ─── */
@@ -26,9 +27,13 @@ export default function CertificationsSection() {
           <p className="text-primary-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
             Chứng nhận & Tiêu chuẩn
           </p>
-          <h2 className="font-display font-extrabold text-neutral-900 text-[28px] lg:text-[40px] leading-[1.15] italic mb-3">
-            Cam kết chất lượng quốc tế
-          </h2>
+          <BlurText
+            text="Cam kết chất lượng quốc tế"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.15] mb-3"
+          />
           <p className="text-neutral-500 text-sm lg:text-base max-w-[520px] mx-auto">
             Toàn bộ sản phẩm đều đạt các chứng nhận quốc tế nghiêm ngặt nhất
             trong ngành y tế

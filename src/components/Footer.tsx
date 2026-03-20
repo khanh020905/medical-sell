@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="relative flex flex-col items-center bg-[#09221D] pt-32 pb-8 overflow-hidden">
       {/* 1. CTA Section */}
       <div className="relative z-20 flex flex-col items-center text-center px-6 max-w-3xl mb-12">
-        <h2 className="font-display font-bold italic text-white text-[56px] leading-[1.1] mb-6 tracking-tight">
+        <h2 className="font-heading font-bold text-white text-[56px] leading-[1.1] mb-6 tracking-tight">
           Tiêu chuẩn mới cho quản lý<br className="hidden sm:block" /> thiết bị y tế.
         </h2>
         <p className="text-[#4F9583] text-[17px] font-medium max-w-[600px] leading-relaxed mb-10">

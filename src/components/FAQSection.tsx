@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BlurText from './BlurText';
 import { motion, AnimatePresence } from "framer-motion";
 import { Triangle, Mail } from "lucide-react";
 
@@ -102,9 +103,13 @@ export default function FAQSection() {
               Câu hỏi thường gặp
             </span>
 
-            <h2 className="font-display font-extrabold text-neutral-900 text-[36px] lg:text-[48px] leading-[1.05] italic mb-8">
-              Giải đáp thắc mắc
-            </h2>
+            <BlurText
+              text="Giải đáp thắc mắc"
+              delay={80}
+              animateBy="words"
+              direction="top"
+              className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.05] mb-8 !justify-start"
+            />
 
             {/* CTA Card */}
             <div className="relative rounded-2xl p-7 overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700">

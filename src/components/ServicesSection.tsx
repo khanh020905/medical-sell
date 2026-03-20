@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 import { Lightbulb, Wrench, ShieldCheck, GraduationCap } from "lucide-react";
 
 /* ─── Service Data ─── */
@@ -99,9 +100,13 @@ export default function ServicesSection() {
           <p className="text-primary-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
             Dịch vụ
           </p>
-          <h2 className="font-display font-extrabold text-neutral-900 text-[32px] lg:text-[44px] leading-[1.15] italic mb-4">
-            Giải pháp toàn diện
-          </h2>
+          <BlurText
+            text="Giải pháp toàn diện"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.15] mb-4"
+          />
           <p className="text-neutral-500 text-base max-w-[580px] mx-auto leading-relaxed">
             Đồng hành cùng khách hàng từ tư vấn, triển khai đến bảo trì — đảm
             bảo thiết bị hoạt động tối ưu

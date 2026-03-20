@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 
 /* ─── Step Data ─── */
 const steps = [
@@ -44,9 +45,13 @@ export default function ProcessSection() {
           <p className="text-primary-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
             Quy trình hợp tác
           </p>
-          <h2 className="font-display font-extrabold text-neutral-900 text-[28px] lg:text-[40px] leading-[1.15] italic mb-3">
-            4 bước để sở hữu thiết bị y tế chất lượng
-          </h2>
+          <BlurText
+            text="4 bước để sở hữu thiết bị y tế chất lượng"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.15] mb-3"
+          />
           <p className="text-neutral-500 text-sm lg:text-base max-w-[500px] mx-auto">
             Quy trình chuyên nghiệp, minh bạch — từ tư vấn đến bàn giao vận
             hành

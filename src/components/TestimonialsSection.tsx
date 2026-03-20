@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 import { Quote } from "lucide-react";
 
 /* ─── Testimonial Data ─── */
@@ -103,9 +104,13 @@ export default function TestimonialsSection() {
           <p className="text-primary-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
             Khách hàng nói gì
           </p>
-          <h2 className="font-display font-extrabold text-neutral-900 text-[28px] lg:text-[40px] leading-[1.15] italic mb-3">
-            Được tin tưởng bởi hàng trăm bệnh viện
-          </h2>
+          <BlurText
+            text="Được tin tưởng bởi hàng trăm bệnh viện"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.15] mb-3"
+          />
           <p className="text-neutral-500 text-sm lg:text-base max-w-[500px] mx-auto">
             Cảm nhận của đối tác và khách hàng đã hợp tác cùng MediTech
           </p>

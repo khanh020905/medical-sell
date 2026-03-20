@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 
 /* ─── Brand Data ─── */
 const brands = [
@@ -46,9 +47,13 @@ export default function BrandMarquee() {
         <p className="text-primary-600 text-xs font-bold tracking-[0.2em] uppercase mb-3">
           Đối tác chiến lược
         </p>
-        <h2 className="font-display font-extrabold text-neutral-900 text-[28px] lg:text-[40px] leading-[1.15] italic mb-3">
-          Hợp tác với những thương hiệu hàng đầu thế giới
-        </h2>
+        <BlurText
+          text="Hợp tác với những thương hiệu hàng đầu thế giới"
+          delay={80}
+          animateBy="words"
+          direction="top"
+          className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.15] mb-3"
+        />
         <p className="text-neutral-500 text-sm lg:text-base max-w-[550px] mx-auto">
           Đại diện phân phối chính thức các hãng thiết bị y tế uy tín từ Đức, Hà
           Lan, Hàn Quốc

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 import { Phone, Mail, MapPin, Send, Clock } from "lucide-react";
 
 export default function ContactSection() {
@@ -33,9 +34,13 @@ export default function ContactSection() {
               Liên hệ ngay
             </p>
 
-            <h2 className="font-display font-extrabold text-white text-[28px] lg:text-[40px] leading-[1.1] italic mb-5">
-              Bạn cần tư vấn giải pháp thiết bị y tế?
-            </h2>
+            <BlurText
+              text="Bạn cần tư vấn giải pháp thiết bị y tế?"
+              delay={80}
+              animateBy="words"
+              direction="top"
+              className="font-heading font-extrabold text-white text-[28px] lg:text-[36px] leading-[1.1] mb-5 !justify-start"
+            />
 
             <p className="text-neutral-400 text-[15px] leading-relaxed mb-8 max-w-[440px]">
               Hãy để lại thông tin, đội ngũ chuyên gia của MediTech sẽ liên hệ

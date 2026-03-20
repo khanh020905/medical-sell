@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BlurText from './BlurText';
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -8,6 +9,7 @@ const products = [
     image: "/images/product-robot-surgery.png",
     brand: "PERFINT HEALTHCARE",
     name: "MAXIO® III",
+    slug: "maxio-iii",
     description:
       "Hệ thống robot can thiệp dẫn đường CT/PET-CT với công nghệ InstaReg™, cánh tay 5 trục độ chính xác cao.",
     tag: "Bán chạy",
@@ -16,6 +18,7 @@ const products = [
     image: "/images/product-surgical-table.png",
     brand: "SONESTA",
     name: "SONESTA 6210",
+    slug: "sonesta-6210",
     description:
       "Bàn phẫu thuật cao cấp 3 motor với khả năng điều chỉnh đa chiều, chuyên dụng cho chỉnh hình và thần kinh.",
     tag: "Mới",
@@ -24,6 +27,7 @@ const products = [
     image: "/images/product-ent-workstation.png",
     brand: "CHAMMED",
     name: "CHAMMED CU-5000",
+    slug: "chammed-cu-5000",
     description:
       "Trạm khám tai mũi họng tích hợp đa chức năng: camera, đèn chiều, hệ thống hút, nguồn sáng LED hiện đại.",
     tag: null,
@@ -32,6 +36,7 @@ const products = [
     image: "/images/product-surgical-tools.png",
     brand: "KLS MARTIN · ĐỨC",
     name: "Dụng cụ phẫu thuật",
+    slug: "dung-cu-phau-thuat",
     description:
       "Bộ dụng cụ phẫu thuật cao cấp từ Đức: tim mạch, lồng ngực, tiêu hóa, chỉnh hình — tiêu chuẩn châu Âu.",
     tag: null,
@@ -40,6 +45,7 @@ const products = [
     image: "/images/product-pharmacy-auto.png",
     brand: "JVM · HÀN QUỐC",
     name: "Tự động hóa nhà thuốc",
+    slug: "tu-dong-hoa-nha-thuoc",
     description:
       "Hệ thống cấp phát thuốc tự động, quản lý kho dược phẩm thông minh cho bệnh viện và nhà thuốc lớn.",
     tag: "Hot",
@@ -48,6 +54,7 @@ const products = [
     image: "/images/product-xray-digital.png",
     brand: "PHILIPS HEALTHCARE · HÀ LAN",
     name: "Hệ thống X-ray kỹ thuật số",
+    slug: "he-thong-xray-ky-thuat-so",
     description:
       "Hệ thống chụp X-quang kỹ thuật số Philips với chất lượng hình ảnh vượt trội, giảm liều phóng xạ cho bệnh nhân.",
     tag: null,
@@ -114,7 +121,7 @@ function ProductCard({
         </p>
         {/* CTA link */}
         <Link
-          to="/san-pham"
+          to={`/products/${product.slug}`}
           className="inline-flex items-center gap-1.5 text-primary-600 text-sm font-bold hover:gap-3 transition-all duration-300"
         >
           Chi tiết
@@ -151,10 +158,13 @@ export default function FeaturedProducts() {
               Sản phẩm nổi bật
             </span>
           </div>
-          <h2 className="font-display font-extrabold text-neutral-900 text-[36px] lg:text-[48px] leading-[1.1] italic mb-4">
-            Thiết bị y tế{" "}
-            <span className="text-primary-600">công nghệ cao</span>
-          </h2>
+          <BlurText
+            text="Thiết bị y tế công nghệ cao"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.1] mb-4"
+          />
           <p className="text-neutral-500 text-lg max-w-[600px] mx-auto">
             Những giải pháp thiết bị y tế tiên tiến nhất từ các hãng sản xuất
             hàng đầu thế giới
@@ -192,7 +202,7 @@ export default function FeaturedProducts() {
           className="text-center"
         >
           <Link
-            to="/san-pham"
+            to="/products"
             className="inline-flex items-center gap-2.5 px-10 py-4 rounded-2xl bg-primary-600 text-white font-bold text-base shadow-lg shadow-primary-600/25 hover:bg-primary-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
           >
             Xem tất cả sản phẩm

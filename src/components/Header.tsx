@@ -5,21 +5,21 @@ import { Menu, X, Phone, Mail, ChevronDown, MapPin, Clock } from 'lucide-react'
 
 const navLinks = [
   { label: 'Trang chủ', href: '/' },
-  { label: 'Giới thiệu', href: '/gioi-thieu' },
+  { label: 'Giới thiệu', href: '/about' },
   {
     label: 'Sản phẩm',
-    href: '/san-pham',
+    href: '/products',
     children: [
-      { label: 'Chẩn đoán hình ảnh', href: '/san-pham#medical-imaging' },
-      { label: 'Dụng cụ phẫu thuật', href: '/san-pham#surgical' },
-      { label: 'Tự động hóa dược phẩm', href: '/san-pham#automation' },
-      { label: 'Thiết bị khác', href: '/san-pham#others' },
+      { label: 'Chẩn đoán hình ảnh', href: '/products#medical-imaging' },
+      { label: 'Dụng cụ phẫu thuật', href: '/products#surgical' },
+      { label: 'Tự động hóa dược phẩm', href: '/products#automation' },
+      { label: 'Thiết bị khác', href: '/products#others' },
     ],
   },
-  { label: 'Dịch vụ', href: '/dich-vu' },
-  { label: 'Đối tác', href: '/doi-tac' },
-  { label: 'Tin tức', href: '/tin-tuc' },
-  { label: 'Liên hệ', href: '/lien-he' },
+  { label: 'Dịch vụ', href: '/services' },
+  { label: 'Đối tác', href: '/partners' },
+  { label: 'Tin tức', href: '/news' },
+  { label: 'Liên hệ', href: '/contact' },
 ]
 
 export default function Header() {
@@ -75,7 +75,7 @@ export default function Header() {
               >
                 <Link
                   to={link.href}
-                  className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1 ${
+                  className={`px-3.5 py-2 rounded-lg text-[15px] font-medium transition-colors flex items-center gap-1 ${
                     location.pathname === link.href
                       ? 'text-primary-600 bg-primary-50'
                       : 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-50'
@@ -111,7 +111,7 @@ export default function Header() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <Link
-              to="/lien-he"
+              to="/contact"
               className="hidden lg:inline-flex px-5 py-2.5 bg-accent-500 text-white text-sm font-semibold rounded-xl hover:bg-accent-600 transition-colors shadow-sm"
             >
               Yêu cầu báo giá
@@ -151,7 +151,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Link
-                  to="/lien-he"
+                  to="/contact"
                   onClick={() => setMobileOpen(false)}
                   className="mt-2 px-4 py-3 bg-accent-500 text-white text-sm font-semibold rounded-xl text-center"
                 >

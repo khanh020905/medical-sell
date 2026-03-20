@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
+import BlurText from './BlurText';
 import { useRef, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -96,7 +97,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* ─── Bottom: Title + Company + Text ─── */}
-        <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-start">
           {/* Left: Title + Description */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -104,9 +105,13 @@ export default function AboutSection() {
             transition={{ duration: 0.5, delay: 0.15 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display font-extrabold text-neutral-900 text-[32px] lg:text-[44px] leading-[1.1] italic mb-6">
-              Nhà cung cấp thiết bị y tế hàng đầu Việt Nam.
-            </h2>
+            <BlurText
+              text="Nhà cung cấp thiết bị y tế hàng đầu Việt Nam."
+              delay={80}
+              animateBy="words"
+              direction="top"
+              className="font-heading font-extrabold text-neutral-900 text-[28px] lg:text-[36px] leading-[1.1] mb-6 !justify-start"
+            />
 
             {/* Two-column text */}
             <div className="grid sm:grid-cols-2 gap-6">
@@ -135,7 +140,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
             viewport={{ once: true }}
-            className="text-right"
+            className="text-right whitespace-nowrap"
           >
             <p className="font-heading font-extrabold text-primary-600 text-2xl tracking-tight mb-1">
               MEDITECH
@@ -151,7 +156,7 @@ export default function AboutSection() {
             </p>
 
             <Link
-              to="/gioi-thieu"
+              to="/about"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-neutral-900 text-white font-heading font-bold text-sm tracking-wide uppercase hover:bg-neutral-800 hover:-translate-y-0.5 transition-all duration-300"
             >
               Tìm hiểu thêm

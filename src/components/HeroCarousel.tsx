@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import BlurText from './BlurText'
 
 /* ─── Slide Data ─── */
 interface Slide {
@@ -17,33 +18,33 @@ interface Slide {
 const slides: Slide[] = [
   {
     doctorImage: '/images/doctor-group-surgery.png',
-    imageHeight: '75vh',
+    imageHeight: '76vh',
     bgTitle: 'THIẾT BỊ Y TẾ',
     description:
       'Cung cấp giải pháp thiết bị y tế toàn diện từ các hãng hàng đầu thế giới cho hệ thống bệnh viện và cơ sở y tế.',
     stat1: { value: '130k+', label: 'Bệnh viện đối tác' },
     stat2: { value: '872+', label: 'Bác sĩ' },
-    cta: { label: 'Yêu cầu tư vấn', href: '/lien-he' },
+    cta: { label: 'Yêu cầu tư vấn', href: '/contact' },
   },
   {
     doctorImage: '/images/doctor-3.png',
-    imageHeight: '75vh',
+    imageHeight: '76vh',
     bgTitle: 'CHẨN ĐOÁN',
     description:
       'Hệ thống CT, MRI, X-ray kỹ thuật số với chất lượng hình ảnh vượt trội, tối ưu quy trình chẩn đoán.',
     stat1: { value: '20+', label: 'Năm kinh nghiệm' },
     stat2: { value: '50+', label: 'Đối tác' },
-    cta: { label: 'Khám phá sản phẩm', href: '/san-pham' },
+    cta: { label: 'Khám phá sản phẩm', href: '/products' },
   },
   {
     doctorImage: '/images/doctor-group-coats.png',
-    imageHeight: '72vh',
+    imageHeight: '74vh',
     bgTitle: 'GIẢI PHÁP',
     description:
       'Từ tư vấn, triển khai, đào tạo đến bảo trì bảo hành — đồng hành cùng bạn trong mọi giai đoạn.',
     stat1: { value: '500+', label: 'Khách hàng' },
     stat2: { value: '99%', label: 'Hài lòng' },
-    cta: { label: 'Xem dịch vụ', href: '/dich-vu' },
+    cta: { label: 'Xem dịch vụ', href: '/services' },
   },
 ]
 
@@ -55,7 +56,7 @@ const doctorVariants = {
   center: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: {
     opacity: 0,
@@ -64,22 +65,13 @@ const doctorVariants = {
   },
 }
 
-const titleVariants = {
-  enter: { opacity: 0, scale: 0.98 },
-  center: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 1.1, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
-  },
-  exit: { opacity: 0, scale: 1.02, transition: { duration: 0.5 } },
-}
 
 const floatLeft = {
   enter: { opacity: 0, x: -40 },
   center: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.7, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: { opacity: 0, x: -20, transition: { duration: 0.35 } },
 }
@@ -89,7 +81,7 @@ const floatRight = {
   center: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.7, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.7, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
   },
   exit: { opacity: 0, x: 20, transition: { duration: 0.35 } },
 }
@@ -99,7 +91,7 @@ const descVariants = {
   center: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: 0.6 },
+    transition: { duration: 0.7, delay: 1.2 },
   },
   exit: { opacity: 0, y: -10, transition: { duration: 0.3 } },
 }
@@ -109,7 +101,7 @@ const ctaVariants = {
   center: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.7 },
+    transition: { duration: 0.6, delay: 1.3 },
   },
   exit: { opacity: 0, y: -10, transition: { duration: 0.3 } },
 }
@@ -136,29 +128,31 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative w-full h-[85vh] lg:h-[calc(100dvh-108px)] overflow-hidden flex flex-col items-center bg-gradient-to-b from-primary-900 to-primary-600 -mb-[1px]"
+      className="relative w-full h-[90dvh] lg:h-[calc(100dvh-96px)] overflow-hidden flex flex-col items-center bg-gradient-to-b from-primary-900 to-primary-600"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* ═══ BIG BACKGROUND TITLE ═══ */}
       <div className="absolute top-[18%] lg:top-[12%] w-full flex justify-center pointer-events-none select-none z-0">
-        <AnimatePresence mode="wait">
-          <motion.h1
-            key={`bgt-${current}`}
-            variants={titleVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            className="font-heading font-black text-white whitespace-nowrap"
-            style={{
-              fontSize: 'clamp(56px, 11vw, 180px)',
-              letterSpacing: '0.05em',
-              lineHeight: 1,
-            }}
-          >
-            {slide.bgTitle}
-          </motion.h1>
-        </AnimatePresence>
+        <BlurText
+          key={`bgt-${current}`}
+          text={slide.bgTitle}
+          delay={60}
+          animateBy="letters"
+          direction="top"
+          className="font-heading font-black text-white whitespace-nowrap !flex-nowrap"
+          stepDuration={0.25}
+          style={{
+            fontSize: 'clamp(56px, 11vw, 180px)',
+            letterSpacing: '0.05em',
+            lineHeight: 1,
+          }}
+          animationFrom={{ filter: 'blur(12px)', opacity: 0, y: -30 }}
+          animationTo={[
+            { filter: 'blur(4px)', opacity: 0.6, y: 5 },
+            { filter: 'blur(0px)', opacity: 1, y: 0 },
+          ]}
+        />
       </div>
 
       {/* ═══ DOCTOR CUTOUT (CENTER) ═══ */}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CTABanner() {
   return (
@@ -28,12 +29,12 @@ export default function CTABanner() {
 
           {/* Buttons */}
           <div className="relative z-10 flex items-center gap-3 flex-shrink-0">
-            <a
-              href="#contact"
+            <Link
+              to="/quote"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-900 font-heading font-bold text-sm shadow-lg shadow-amber-500/25 hover:from-amber-500 hover:to-amber-600 hover:-translate-y-0.5 transition-all duration-300"
             >
               Yêu cầu báo giá
-            </a>
+            </Link>
             <a
               href="tel:+84869009486"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/20 text-white font-heading font-bold text-sm hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm"
@@ -47,3 +48,4 @@ export default function CTABanner() {
     </section>
   );
 }
+

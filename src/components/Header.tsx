@@ -111,7 +111,7 @@ export default function Header() {
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-3">
             <Link
-              to="/contact"
+              to="/quote"
               className="hidden lg:inline-flex px-5 py-2.5 bg-accent-500 text-white text-sm font-semibold rounded-xl hover:bg-accent-600 transition-colors shadow-sm"
             >
               Yêu cầu báo giá
@@ -151,7 +151,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Link
-                  to="/contact"
+                  to="/quote"
                   onClick={() => setMobileOpen(false)}
                   className="mt-2 px-4 py-3 bg-accent-500 text-white text-sm font-semibold rounded-xl text-center"
                 >

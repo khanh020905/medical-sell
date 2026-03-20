@@ -250,7 +250,7 @@ export default function Products() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/contact"
+              to="/quote"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent-500 text-white font-heading font-bold text-sm rounded-xl hover:bg-accent-600 hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Yêu cầu báo giá
@@ -279,7 +279,7 @@ export default function Products() {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              to="/contact"
+              to="/quote"
               className="px-6 py-3 bg-accent-500 text-white font-heading font-bold text-sm rounded-xl hover:bg-accent-600 transition-colors"
             >
               Yêu cầu báo giá

@@ -8,7 +8,9 @@ import ProductDetail from './pages/ProductDetail'
 import Services from './pages/Services'
 import Partners from './pages/Partners'
 import News from './pages/News'
+import NewsDetail from './pages/NewsDetail'
 import Contact from './pages/Contact'
+import Quote from './pages/Quote'
 import ChatBot from './components/ChatBot'
 
 /* Scroll to top on every route change */
@@ -33,7 +35,9 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="partners" element={<Partners />} />
           <Route path="news" element={<News />} />
+          <Route path="news/:slug" element={<NewsDetail />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="quote" element={<Quote />} />
         </Route>
       </Routes>
       <ChatBot />

@@ -198,7 +198,7 @@ export default function ProductDetail() {
               {/* CTA Buttons */}
               <div className="product-info-item space-y-3">
                 <Link
-                  to="/contact"
+                  to="/quote"
                   className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-accent-500 text-white font-heading font-bold text-sm rounded-2xl hover:bg-accent-600 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-accent-500/25"
                 >
                   <FileText size={18} />
@@ -463,7 +463,7 @@ export default function ProductDetail() {
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              to="/contact"
+              to="/quote"
               className="px-6 py-3 bg-accent-500 text-white font-heading font-bold text-sm rounded-xl hover:bg-accent-600 transition-colors"
             >
               Yêu cầu báo giá
